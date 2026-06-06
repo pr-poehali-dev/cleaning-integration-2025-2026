@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 
+const MAX_LINK = "https://max.ru/u/f9LHodD0cOIhDoRH_6LXfcSUOHBuL1Ox9Kjst5F3mN4736vAC4pXtz-GKzc";
 const HERO_IMG = "https://cdn.poehali.dev/projects/13d4fa88-ae99-47e6-9241-87cd724e7836/files/ecd0652d-8f06-4eca-812a-20c7800ff8fe.jpg";
 const BEFORE_AFTER_IMG = "https://cdn.poehali.dev/projects/13d4fa88-ae99-47e6-9241-87cd724e7836/files/1417e938-c071-4421-8c59-c71aa623e08a.jpg";
 const TEAM_IMG = "https://cdn.poehali.dev/projects/13d4fa88-ae99-47e6-9241-87cd724e7836/files/4a8372a5-3473-4430-955f-eddd3d00bdb6.jpg";
@@ -60,9 +61,6 @@ function Section({ children, className = "" }: { children: React.ReactNode; clas
 
 export default function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [phone, setPhone] = useState("");
-  const [name, setName] = useState("");
-  const [submitted, setSubmitted] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const scrollTo = (id: string) => {
@@ -70,10 +68,7 @@ export default function Index() {
     setMobileOpen(false);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  const goMax = () => window.open(MAX_LINK, "_blank");
 
   return (
     <div className="min-h-screen bg-white font-golos overflow-x-hidden">
@@ -97,12 +92,14 @@ export default function Index() {
               <Icon name="Phone" size={15} />
               +7 (861) 200-00-00
             </a>
-            <button
-              onClick={() => scrollTo("contact")}
+            <a
+              href={MAX_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-glow gradient-brand text-white text-sm font-semibold px-4 py-2 rounded-full shadow-md hover:shadow-cyan-200 hover:shadow-lg transition-all"
             >
               Заказать
-            </button>
+            </a>
             <button className="md:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
               <Icon name={mobileOpen ? "X" : "Menu"} size={22} />
             </button>
@@ -153,12 +150,14 @@ export default function Index() {
               ))}
             </div>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in animate-delay-500 opacity-0-init" style={{ animationFillMode: "forwards" }}>
-              <button
-                onClick={() => scrollTo("contact")}
+              <a
+                href={MAX_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-glow gradient-brand text-white font-bold text-base px-8 py-4 rounded-2xl shadow-lg hover:shadow-cyan-500/30 hover:shadow-xl transition-all hover:-translate-y-1 animate-pulse-glow"
               >
-                Рассчитать стоимость
-              </button>
+                Написать в MAX
+              </a>
               <a
                 href="tel:+78612000000"
                 className="flex items-center justify-center gap-2 border-2 border-cyan-400/40 text-cyan-300 font-semibold text-base px-8 py-4 rounded-2xl hover:bg-cyan-500/10 transition-all"
@@ -213,12 +212,14 @@ export default function Index() {
                   <p className="text-gray-500 text-sm mb-4 leading-relaxed">{s.desc}</p>
                   <div className="flex items-center justify-between">
                     <span className="font-bold text-cyan-600 text-lg">{s.price}</span>
-                    <button
-                      onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                    <a
+                      href={MAX_LINK}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-xs font-semibold text-cyan-500 hover:text-cyan-700 flex items-center gap-1 transition-colors"
                     >
                       Заказать <Icon name="ArrowRight" size={14} />
-                    </button>
+                    </a>
                   </div>
                 </div>
               </Section>
@@ -241,12 +242,14 @@ export default function Index() {
             <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
               Удаляем даже самые стойкие пятна — от вина, кофе, чернил, жира и многого другого. Результат виден сразу.
             </p>
-            <button
-              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            <a
+              href={MAX_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-glow gradient-brand text-white font-bold text-base px-10 py-4 rounded-2xl shadow-lg hover:shadow-cyan-500/40 hover:shadow-xl transition-all hover:-translate-y-1"
             >
-              Хочу так же — оставить заявку
-            </button>
+              Хочу так же — написать в MAX
+            </a>
           </Section>
         </div>
       </section>
@@ -376,71 +379,39 @@ export default function Index() {
         </div>
       </section>
 
-      {/* CONTACT FORM */}
+      {/* CTA SECTION */}
       <section id="contact" className="py-24 bg-[#0d1b2a] relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-cyan-500/10 rounded-full blur-3xl" />
-        <div className="relative max-w-2xl mx-auto px-4">
+        <div className="absolute bottom-0 left-1/4 w-[400px] h-[200px] bg-blue-500/5 rounded-full blur-3xl" />
+        <div className="relative max-w-2xl mx-auto px-4 text-center">
           <Section>
-            <div className="text-center mb-10">
-              <span className="text-cyan-400 text-sm font-semibold uppercase tracking-widest">Рассчитать стоимость</span>
-              <h2 className="font-oswald text-4xl md:text-5xl font-bold text-white mt-2">ОСТАВИТЬ ЗАЯВКУ</h2>
-              <p className="text-gray-400 mt-3">Перезвоним в течение 15 минут и рассчитаем точную стоимость</p>
+            <span className="text-cyan-400 text-sm font-semibold uppercase tracking-widest">Связаться с нами</span>
+            <h2 className="font-oswald text-4xl md:text-5xl font-bold text-white mt-2 mb-4">ГОТОВЫ К ЧИСТОТЕ?</h2>
+            <p className="text-gray-400 text-lg mb-10 max-w-lg mx-auto">
+              Напишите нам в MAX — ответим быстро, рассчитаем стоимость и назначим удобное время
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href={MAX_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-glow gradient-brand text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-lg hover:shadow-cyan-500/40 hover:shadow-xl transition-all hover:-translate-y-1 flex items-center justify-center gap-3"
+              >
+                <Icon name="MessageCircle" size={22} />
+                Написать в MAX
+              </a>
+              <a
+                href="tel:+78612000000"
+                className="flex items-center justify-center gap-3 border-2 border-cyan-400/40 text-cyan-300 font-bold text-lg px-10 py-5 rounded-2xl hover:bg-cyan-500/10 transition-all"
+              >
+                <Icon name="Phone" size={20} />
+                Позвонить
+              </a>
             </div>
-          </Section>
-          <Section>
-            {submitted ? (
-              <div className="text-center py-12">
-                <div className="w-16 h-16 rounded-full gradient-brand flex items-center justify-center mx-auto mb-4 animate-scale-in">
-                  <Icon name="Check" size={32} className="text-white" />
-                </div>
-                <h3 className="font-oswald text-2xl font-bold text-white mb-2">Заявка принята!</h3>
-                <p className="text-gray-400">Перезвоним вам в течение 15 минут</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm flex flex-col gap-4">
-                <div>
-                  <label className="text-gray-400 text-sm mb-1.5 block">Ваше имя</label>
-                  <input
-                    type="text"
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                    placeholder="Как вас зовут?"
-                    required
-                    className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyan-400 transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="text-gray-400 text-sm mb-1.5 block">Номер телефона</label>
-                  <input
-                    type="tel"
-                    value={phone}
-                    onChange={e => setPhone(e.target.value)}
-                    placeholder="+7 (___) ___-__-__"
-                    required
-                    className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyan-400 transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="text-gray-400 text-sm mb-1.5 block">Что нужно почистить?</label>
-                  <select className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-gray-300 text-sm focus:outline-none focus:border-cyan-400 transition-colors">
-                    <option value="" className="bg-gray-900">Выберите услугу</option>
-                    <option value="sofa" className="bg-gray-900">Диван</option>
-                    <option value="armchair" className="bg-gray-900">Кресло</option>
-                    <option value="mattress" className="bg-gray-900">Матрас</option>
-                    <option value="carpet" className="bg-gray-900">Ковёр</option>
-                    <option value="car" className="bg-gray-900">Автомобиль</option>
-                    <option value="other" className="bg-gray-900">Другое</option>
-                  </select>
-                </div>
-                <button
-                  type="submit"
-                  className="btn-glow gradient-brand text-white font-bold text-base py-4 rounded-2xl mt-2 hover:shadow-cyan-500/30 hover:shadow-xl transition-all hover:-translate-y-0.5"
-                >
-                  Рассчитать стоимость бесплатно
-                </button>
-                <p className="text-gray-500 text-xs text-center">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
-              </form>
-            )}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500">
+              <span className="flex items-center gap-1.5"><Icon name="Mail" size={14} className="text-cyan-500" /> arenda-chistoty.ru@yandex.ru</span>
+              <span className="flex items-center gap-1.5"><Icon name="Clock" size={14} className="text-cyan-500" /> Пн–Вс: 8:00–20:00</span>
+            </div>
           </Section>
         </div>
       </section>
@@ -459,10 +430,20 @@ export default function Index() {
             <a href="tel:+78612000000" className="text-cyan-400 font-semibold hover:text-cyan-300 transition-colors">
               +7 (861) 200-00-00
             </a>
+            <a href="mailto:arenda-chistoty.ru@yandex.ru" className="text-cyan-400/70 hover:text-cyan-300 transition-colors text-xs">
+              arenda-chistoty.ru@yandex.ru
+            </a>
           </div>
-          <div className="flex items-center gap-4 text-xs">
+          <div className="flex flex-col items-end gap-2 text-xs">
             <span>Пн–Вс: 8:00–20:00</span>
-            <a href="#" className="hover:text-cyan-400 transition-colors">Политика конфиденциальности</a>
+            <a
+              href={MAX_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-cyan-400 hover:text-cyan-300 transition-colors font-semibold"
+            >
+              <Icon name="MessageCircle" size={13} /> Написать в MAX
+            </a>
           </div>
         </div>
         <div className="text-center text-xs text-gray-600 mt-6">© 2025 Аренда Чистоты. Все права защищены.</div>
@@ -470,11 +451,13 @@ export default function Index() {
 
       {/* Sticky CTA */}
       <a
-        href="tel:+78612000000"
+        href={MAX_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 w-14 h-14 gradient-brand rounded-full shadow-lg shadow-cyan-500/30 flex items-center justify-center hover:scale-110 transition-transform animate-pulse-glow"
-        title="Позвонить"
+        title="Написать в MAX"
       >
-        <Icon name="Phone" size={22} className="text-white" />
+        <Icon name="MessageCircle" size={22} className="text-white" />
       </a>
     </div>
   );
