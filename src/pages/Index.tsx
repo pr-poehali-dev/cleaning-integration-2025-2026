@@ -62,10 +62,17 @@ function Section({ children, className = "" }: { children: React.ReactNode; clas
 export default function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [cookieAccepted, setCookieAccepted] = useState(() => localStorage.getItem("cookie_accepted") === "1");
+  const [pdConsent, setPdConsent] = useState(false);
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setMobileOpen(false);
+  };
+
+  const acceptCookies = () => {
+    localStorage.setItem("cookie_accepted", "1");
+    setCookieAccepted(true);
   };
 
   const goMax = () => window.open(MAX_LINK, "_blank");
@@ -390,12 +397,29 @@ export default function Index() {
             <p className="text-gray-400 text-lg mb-10 max-w-lg mx-auto">
               Напишите нам в MAX — ответим быстро, рассчитаем стоимость и назначим удобное время
             </p>
+            {/* Согласие с ПД */}
+            <label className="inline-flex items-start gap-3 cursor-pointer mb-6 text-left max-w-md mx-auto">
+              <div
+                onClick={() => setPdConsent(!pdConsent)}
+                className={`mt-0.5 w-5 h-5 rounded flex-shrink-0 border-2 flex items-center justify-center transition-colors cursor-pointer ${pdConsent ? "gradient-brand border-transparent" : "border-gray-500 bg-transparent"}`}
+              >
+                {pdConsent && <Icon name="Check" size={12} className="text-white" />}
+              </div>
+              <span className="text-gray-400 text-sm leading-snug">
+                Я согласен(а) с{" "}
+                <a href="#" className="text-cyan-400 hover:underline">обработкой персональных данных</a>{" "}
+                в соответствии с Федеральным законом №152-ФЗ
+              </span>
+            </label>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href={MAX_LINK}
+                href={pdConsent ? MAX_LINK : undefined}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-glow gradient-brand text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-lg hover:shadow-cyan-500/40 hover:shadow-xl transition-all hover:-translate-y-1 flex items-center justify-center gap-3"
+                onClick={!pdConsent ? (e) => { e.preventDefault(); setPdConsent(false); } : undefined}
+                className={`btn-glow text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-lg transition-all flex items-center justify-center gap-3 ${pdConsent ? "gradient-brand hover:shadow-cyan-500/40 hover:shadow-xl hover:-translate-y-1" : "bg-gray-600 cursor-not-allowed opacity-60"}`}
+                title={!pdConsent ? "Подтвердите согласие с обработкой персональных данных" : ""}
               >
                 <Icon name="MessageCircle" size={22} />
                 Написать в MAX
@@ -408,6 +432,9 @@ export default function Index() {
                 Позвонить
               </a>
             </div>
+            {!pdConsent && (
+              <p className="text-amber-400/70 text-xs mt-3">Поставьте галочку выше, чтобы написать нам</p>
+            )}
             <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500">
               <span className="flex items-center gap-1.5"><Icon name="Mail" size={14} className="text-cyan-500" /> arenda-chistoty.ru@yandex.ru</span>
               <span className="flex items-center gap-1.5"><Icon name="Clock" size={14} className="text-cyan-500" /> Пн–Вс: 8:00–20:00</span>
@@ -459,6 +486,40 @@ export default function Index() {
       >
         <Icon name="MessageCircle" size={22} className="text-white" />
       </a>
+
+      {/* Cookie Banner */}
+      {!cookieAccepted && (
+        <div className="fixed bottom-0 left-0 right-0 z-40 p-4 md:p-0 md:bottom-6 md:left-6 md:right-auto md:max-w-sm">
+          <div className="bg-[#0d1b2a] border border-cyan-500/20 rounded-2xl p-5 shadow-2xl shadow-black/40 backdrop-blur-md">
+            <div className="flex items-start gap-3 mb-4">
+              <div className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Icon name="Cookie" size={16} className="text-cyan-400" />
+              </div>
+              <div>
+                <p className="text-white text-sm font-semibold mb-1">Мы используем cookie</p>
+                <p className="text-gray-400 text-xs leading-relaxed">
+                  Сайт использует cookie-файлы для улучшения работы и анализа посещаемости. Продолжая использование сайта, вы соглашаетесь с{" "}
+                  <a href="#" className="text-cyan-400 hover:underline">политикой конфиденциальности</a>.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-2">
+              <button
+                onClick={acceptCookies}
+                className="flex-1 gradient-brand text-white text-sm font-semibold py-2.5 rounded-xl hover:opacity-90 transition-opacity"
+              >
+                Принять
+              </button>
+              <button
+                onClick={acceptCookies}
+                className="flex-1 border border-gray-600 text-gray-400 text-sm py-2.5 rounded-xl hover:border-gray-500 hover:text-gray-300 transition-colors"
+              >
+                Отклонить
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
