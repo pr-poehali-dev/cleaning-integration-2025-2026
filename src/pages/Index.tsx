@@ -7,12 +7,12 @@ const BEFORE_AFTER_IMG = "https://cdn.poehali.dev/projects/13d4fa88-ae99-47e6-92
 const TEAM_IMG = "https://cdn.poehali.dev/projects/13d4fa88-ae99-47e6-9241-87cd724e7836/files/4a8372a5-3473-4430-955f-eddd3d00bdb6.jpg";
 
 const services = [
-  { icon: "Sofa", title: "Диваны", desc: "Угловые, прямые, модульные. Удалим любые пятна и запахи", price: "от 1 500 ₽", color: "from-cyan-500 to-blue-500" },
-  { icon: "Armchair", title: "Кресла", desc: "Тканевые и кожаные. Бережная чистка без деформации", price: "от 800 ₽", color: "from-teal-500 to-cyan-500" },
-  { icon: "BedDouble", title: "Матрасы", desc: "Глубокая чистка, удаление клещей и аллергенов", price: "от 1 200 ₽", color: "from-blue-500 to-indigo-500" },
-  { icon: "Layers", title: "Ковры", desc: "Все виды ковровых покрытий, любой размер", price: "от 200 ₽/м²", color: "from-cyan-600 to-teal-500" },
-  { icon: "Car", title: "Автомобили", desc: "Химчистка салона, сидений, потолка и ковриков", price: "от 2 500 ₽", color: "from-indigo-500 to-cyan-500" },
-  { icon: "Baby", title: "Детская мебель", desc: "Гипоаллергенные средства, безопасно для детей", price: "от 700 ₽", color: "from-teal-400 to-cyan-400" },
+  { icon: "Sofa", title: "Диваны", desc: "Угловые, прямые, модульные. Удалим любые пятна и запахи", price: "от 1 500 ₽", color: "from-emerald-500 to-teal-500" },
+  { icon: "Armchair", title: "Кресла", desc: "Тканевые и кожаные. Бережная чистка без деформации", price: "от 800 ₽", color: "from-teal-500 to-emerald-400" },
+  { icon: "BedDouble", title: "Матрасы", desc: "Глубокая чистка, удаление клещей и аллергенов", price: "от 1 200 ₽", color: "from-green-600 to-emerald-500" },
+  { icon: "Layers", title: "Ковры", desc: "Все виды ковровых покрытий, любой размер", price: "от 200 ₽/м²", color: "from-emerald-600 to-teal-400" },
+  { icon: "Car", title: "Автомобили", desc: "Химчистка салона, сидений, потолка и ковриков", price: "от 2 500 ₽", color: "from-teal-600 to-emerald-500" },
+  { icon: "Baby", title: "Детская мебель", desc: "Гипоаллергенные средства, безопасно для детей", price: "от 700 ₽", color: "from-green-400 to-emerald-400" },
 ];
 
 const advantages = [
@@ -80,7 +80,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-white font-golos overflow-x-hidden">
       {/* HEADER */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-cyan-100 shadow-sm">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-emerald-100 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg gradient-brand flex items-center justify-center">
@@ -89,13 +89,13 @@ export default function Index() {
             <span className="font-oswald text-lg font-semibold tracking-wide text-gray-900">АРЕНДА ЧИСТОТЫ</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
-            <button onClick={() => scrollTo("services")} className="hover:text-cyan-500 transition-colors">Услуги</button>
-            <button onClick={() => scrollTo("advantages")} className="hover:text-cyan-500 transition-colors">Преимущества</button>
-            <button onClick={() => scrollTo("reviews")} className="hover:text-cyan-500 transition-colors">Отзывы</button>
-            <button onClick={() => scrollTo("faq")} className="hover:text-cyan-500 transition-colors">FAQ</button>
+            <button onClick={() => scrollTo("services")} className="hover:text-emerald-600 transition-colors">Услуги</button>
+            <button onClick={() => scrollTo("advantages")} className="hover:text-emerald-600 transition-colors">Преимущества</button>
+            <button onClick={() => scrollTo("reviews")} className="hover:text-emerald-600 transition-colors">Отзывы</button>
+            <button onClick={() => scrollTo("faq")} className="hover:text-emerald-600 transition-colors">FAQ</button>
           </nav>
           <div className="flex items-center gap-3">
-            <a href="tel:+78612000000" className="hidden md:flex items-center gap-1.5 text-sm font-semibold text-gray-800 hover:text-cyan-600 transition-colors">
+            <a href="tel:+78612000000" className="hidden md:flex items-center gap-1.5 text-sm font-semibold text-gray-800 hover:text-emerald-600 transition-colors">
               <Icon name="Phone" size={15} />
               +7 (861) 200-00-00
             </a>
@@ -103,7 +103,7 @@ export default function Index() {
               href={MAX_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-glow gradient-brand text-white text-sm font-semibold px-4 py-2 rounded-full shadow-md hover:shadow-cyan-200 hover:shadow-lg transition-all"
+              className="btn-glow gradient-brand text-white text-sm font-semibold px-4 py-2 rounded-full shadow-md hover:shadow-emerald-200 hover:shadow-lg transition-all"
             >
               Заказать
             </a>
@@ -113,12 +113,12 @@ export default function Index() {
           </div>
         </div>
         {mobileOpen && (
-          <div className="md:hidden bg-white border-t border-cyan-100 px-4 py-4 flex flex-col gap-3 text-sm font-medium text-gray-700">
+          <div className="md:hidden bg-white border-t border-emerald-100 px-4 py-4 flex flex-col gap-3 text-sm font-medium text-gray-700">
             <button onClick={() => scrollTo("services")}>Услуги</button>
             <button onClick={() => scrollTo("advantages")}>Преимущества</button>
             <button onClick={() => scrollTo("reviews")}>Отзывы</button>
             <button onClick={() => scrollTo("faq")}>FAQ</button>
-            <a href="tel:+78612000000" className="flex items-center gap-1.5 text-cyan-600 font-semibold">
+            <a href="tel:+78612000000" className="flex items-center gap-1.5 text-emerald-600 font-semibold">
               <Icon name="Phone" size={15} /> +7 (861) 200-00-00
             </a>
           </div>
@@ -126,19 +126,19 @@ export default function Index() {
       </header>
 
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-[#0d1b2a]">
+      <section className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-[#0a1f0f]">
         <div className="absolute inset-0">
-          <img src={HERO_IMG} alt="Химчистка мебели" className="w-full h-full object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0d1b2a] via-[#0d1b2a]/80 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b2a] via-transparent to-transparent" />
+          <img src={HERO_IMG} alt="Химчистка мебели" className="w-full h-full object-cover opacity-25" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1f0f] via-[#0a1f0f]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1f0f] via-transparent to-transparent" />
         </div>
         {/* Animated blobs */}
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/4 right-1/3 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1.5s" }} />
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-1/4 right-1/3 w-64 h-64 bg-green-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1.5s" }} />
 
         <div className="relative max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-6 animate-fade-in">
+            <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-6 animate-fade-in">
               <Icon name="MapPin" size={12} />
               Краснодар — выезд на дом
             </div>
@@ -153,7 +153,7 @@ export default function Index() {
             </p>
             <div className="flex flex-wrap gap-3 mb-8 animate-fade-in animate-delay-400 opacity-0-init" style={{ animationFillMode: "forwards" }}>
               {["✓ Выезд в день заявки", "✓ Гарантия результата", "✓ Безопасно для детей"].map(t => (
-                <span key={t} className="text-sm text-cyan-200 bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded-full">{t}</span>
+                <span key={t} className="text-sm text-emerald-200 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">{t}</span>
               ))}
             </div>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in animate-delay-500 opacity-0-init" style={{ animationFillMode: "forwards" }}>
@@ -161,13 +161,13 @@ export default function Index() {
                 href={MAX_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-glow gradient-brand text-white font-bold text-base px-8 py-4 rounded-2xl shadow-lg hover:shadow-cyan-500/30 hover:shadow-xl transition-all hover:-translate-y-1 animate-pulse-glow"
+                className="btn-glow gradient-brand text-white font-bold text-base px-8 py-4 rounded-2xl shadow-lg hover:shadow-emerald-500/30 hover:shadow-xl transition-all hover:-translate-y-1 animate-pulse-glow"
               >
                 Написать в MAX
               </a>
               <a
                 href="tel:+78612000000"
-                className="flex items-center justify-center gap-2 border-2 border-cyan-400/40 text-cyan-300 font-semibold text-base px-8 py-4 rounded-2xl hover:bg-cyan-500/10 transition-all"
+                className="flex items-center justify-center gap-2 border-2 border-emerald-400/40 text-emerald-300 font-semibold text-base px-8 py-4 rounded-2xl hover:bg-emerald-500/10 transition-all"
               >
                 <Icon name="Phone" size={18} />
                 Позвонить
@@ -183,8 +183,8 @@ export default function Index() {
               { num: "4.9★", label: "средняя оценка" },
               { num: "2–4 ч", label: "время сушки" },
             ].map(({ num, label }) => (
-              <div key={label} className="glass-card rounded-2xl p-5 text-center bg-white/5 border border-cyan-400/20">
-                <div className="font-oswald text-3xl font-bold text-cyan-400 mb-1">{num}</div>
+              <div key={label} className="glass-card rounded-2xl p-5 text-center bg-white/5 border border-emerald-400/20">
+                <div className="font-oswald text-3xl font-bold text-emerald-400 mb-1">{num}</div>
                 <div className="text-gray-400 text-sm">{label}</div>
               </div>
             ))}
@@ -203,7 +203,7 @@ export default function Index() {
         <div className="max-w-6xl mx-auto px-4">
           <Section>
             <div className="text-center mb-14">
-              <span className="text-cyan-500 text-sm font-semibold uppercase tracking-widest">Что мы чистим</span>
+              <span className="text-emerald-600 text-sm font-semibold uppercase tracking-widest">Что мы чистим</span>
               <h2 className="font-oswald text-4xl md:text-5xl font-bold text-gray-900 mt-2">НАШИ УСЛУГИ</h2>
               <p className="text-gray-500 mt-3 max-w-xl mx-auto">Работаем со всеми видами мягкой мебели, коврами и автомобилями</p>
             </div>
@@ -211,19 +211,19 @@ export default function Index() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s, i) => (
               <Section key={s.title}>
-                <div className="card-hover border border-gray-100 rounded-2xl p-6 shadow-sm hover:border-cyan-200 bg-white group cursor-pointer">
+                <div className="card-hover border border-gray-100 rounded-2xl p-6 shadow-sm hover:border-emerald-200 bg-white group cursor-pointer">
                   <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${s.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                     <Icon name={s.icon} size={22} className="text-white" fallback="Sparkles" />
                   </div>
                   <h3 className="font-oswald text-xl font-semibold text-gray-900 mb-1">{s.title}</h3>
                   <p className="text-gray-500 text-sm mb-4 leading-relaxed">{s.desc}</p>
                   <div className="flex items-center justify-between">
-                    <span className="font-bold text-cyan-600 text-lg">{s.price}</span>
+                    <span className="font-bold text-emerald-600 text-lg">{s.price}</span>
                     <a
                       href={MAX_LINK}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-semibold text-cyan-500 hover:text-cyan-700 flex items-center gap-1 transition-colors"
+                      className="text-xs font-semibold text-emerald-600 hover:text-emerald-800 flex items-center gap-1 transition-colors"
                     >
                       Заказать <Icon name="ArrowRight" size={14} />
                     </a>
@@ -236,11 +236,11 @@ export default function Index() {
       </section>
 
       {/* BEFORE/AFTER BANNER */}
-      <section className="py-20 bg-[#0d1b2a] relative overflow-hidden">
+      <section className="py-20 bg-[#0a1f0f] relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img src={BEFORE_AFTER_IMG} alt="" className="w-full h-full object-cover" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d1b2a] via-[#0d1b2a]/70 to-[#0d1b2a]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1f0f] via-[#0a1f0f]/70 to-[#0a1f0f]" />
         <div className="relative max-w-4xl mx-auto px-4 text-center">
           <Section>
             <h2 className="font-oswald text-4xl md:text-5xl font-bold text-white mb-4">
@@ -253,7 +253,7 @@ export default function Index() {
               href={MAX_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-glow gradient-brand text-white font-bold text-base px-10 py-4 rounded-2xl shadow-lg hover:shadow-cyan-500/40 hover:shadow-xl transition-all hover:-translate-y-1"
+              className="btn-glow gradient-brand text-white font-bold text-base px-10 py-4 rounded-2xl shadow-lg hover:shadow-emerald-500/40 hover:shadow-xl transition-all hover:-translate-y-1"
             >
               Хочу так же — написать в MAX
             </a>
@@ -266,16 +266,16 @@ export default function Index() {
         <div className="max-w-6xl mx-auto px-4">
           <Section>
             <div className="text-center mb-14">
-              <span className="text-cyan-500 text-sm font-semibold uppercase tracking-widest">Почему мы</span>
+              <span className="text-emerald-600 text-sm font-semibold uppercase tracking-widest">Почему мы</span>
               <h2 className="font-oswald text-4xl md:text-5xl font-bold text-gray-900 mt-2">НАШИ ПРЕИМУЩЕСТВА</h2>
             </div>
           </Section>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {advantages.map((a) => (
               <Section key={a.title}>
-                <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:border-cyan-200 hover:shadow-md transition-all">
-                  <div className="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center mb-4">
-                    <Icon name={a.icon} size={20} className="text-cyan-500" fallback="Check" />
+                <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:border-emerald-200 hover:shadow-md transition-all">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center mb-4">
+                    <Icon name={a.icon} size={20} className="text-emerald-600" fallback="Check" />
                   </div>
                   <h3 className="font-oswald text-lg font-semibold text-gray-900 mb-2">{a.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{a.desc}</p>
@@ -291,7 +291,7 @@ export default function Index() {
         <div className="max-w-5xl mx-auto px-4">
           <Section>
             <div className="text-center mb-14">
-              <span className="text-cyan-500 text-sm font-semibold uppercase tracking-widest">Как это работает</span>
+              <span className="text-emerald-600 text-sm font-semibold uppercase tracking-widest">Как это работает</span>
               <h2 className="font-oswald text-4xl md:text-5xl font-bold text-gray-900 mt-2">КАК МЫ РАБОТАЕМ</h2>
             </div>
           </Section>
@@ -304,9 +304,9 @@ export default function Index() {
             ].map((s) => (
               <Section key={s.step}>
                 <div className="relative text-center">
-                  <div className="font-oswald text-6xl font-bold text-cyan-50 leading-none select-none absolute -top-4 left-1/2 -translate-x-1/2">{s.step}</div>
+                  <div className="font-oswald text-6xl font-bold text-emerald-50 leading-none select-none absolute -top-4 left-1/2 -translate-x-1/2">{s.step}</div>
                   <div className="relative pt-4">
-                    <div className="w-14 h-14 rounded-2xl gradient-brand flex items-center justify-center mx-auto mb-4 shadow-md shadow-cyan-200">
+                    <div className="w-14 h-14 rounded-2xl gradient-brand flex items-center justify-center mx-auto mb-4 shadow-md shadow-emerald-200">
                       <Icon name={s.icon} size={24} className="text-white" fallback="Check" />
                     </div>
                     <h3 className="font-oswald text-xl font-semibold text-gray-900 mb-2">{s.title}</h3>
@@ -324,14 +324,14 @@ export default function Index() {
         <div className="max-w-6xl mx-auto px-4">
           <Section>
             <div className="text-center mb-14">
-              <span className="text-cyan-500 text-sm font-semibold uppercase tracking-widest">Отзывы клиентов</span>
+              <span className="text-emerald-600 text-sm font-semibold uppercase tracking-widest">Отзывы клиентов</span>
               <h2 className="font-oswald text-4xl md:text-5xl font-bold text-gray-900 mt-2">ЧТО ГОВОРЯТ КЛИЕНТЫ</h2>
             </div>
           </Section>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {reviews.map((r) => (
               <Section key={r.name}>
-                <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:border-cyan-200 hover:shadow-md transition-all">
+                <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:border-emerald-200 hover:shadow-md transition-all">
                   <div className="flex items-center gap-1 mb-3">
                     {Array.from({ length: r.rating }).map((_, i) => (
                       <Icon key={i} name="Star" size={15} className="text-amber-400 fill-amber-400" />
@@ -359,7 +359,7 @@ export default function Index() {
         <div className="max-w-3xl mx-auto px-4">
           <Section>
             <div className="text-center mb-14">
-              <span className="text-cyan-500 text-sm font-semibold uppercase tracking-widest">Вопросы и ответы</span>
+              <span className="text-emerald-600 text-sm font-semibold uppercase tracking-widest">Вопросы и ответы</span>
               <h2 className="font-oswald text-4xl md:text-5xl font-bold text-gray-900 mt-2">ЧАСТЫЕ ВОПРОСЫ</h2>
             </div>
           </Section>
@@ -367,12 +367,12 @@ export default function Index() {
             {faq.map((item, i) => (
               <Section key={i}>
                 <div
-                  className="border border-gray-200 rounded-2xl overflow-hidden hover:border-cyan-300 transition-colors cursor-pointer"
+                  className="border border-gray-200 rounded-2xl overflow-hidden hover:border-emerald-300 transition-colors cursor-pointer"
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 >
                   <div className="flex items-center justify-between px-6 py-4">
                     <span className="font-semibold text-gray-900 text-sm">{item.q}</span>
-                    <Icon name={openFaq === i ? "ChevronUp" : "ChevronDown"} size={18} className="text-cyan-500 flex-shrink-0 ml-3" />
+                    <Icon name={openFaq === i ? "ChevronUp" : "ChevronDown"} size={18} className="text-emerald-500 flex-shrink-0 ml-3" />
                   </div>
                   {openFaq === i && (
                     <div className="px-6 pb-4 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-3">
@@ -387,12 +387,12 @@ export default function Index() {
       </section>
 
       {/* CTA SECTION */}
-      <section id="contact" className="py-24 bg-[#0d1b2a] relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-cyan-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-1/4 w-[400px] h-[200px] bg-blue-500/5 rounded-full blur-3xl" />
+      <section id="contact" className="py-24 bg-[#0a1f0f] relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-emerald-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/4 w-[400px] h-[200px] bg-green-500/5 rounded-full blur-3xl" />
         <div className="relative max-w-2xl mx-auto px-4 text-center">
           <Section>
-            <span className="text-cyan-400 text-sm font-semibold uppercase tracking-widest">Связаться с нами</span>
+            <span className="text-emerald-400 text-sm font-semibold uppercase tracking-widest">Связаться с нами</span>
             <h2 className="font-oswald text-4xl md:text-5xl font-bold text-white mt-2 mb-4">ГОТОВЫ К ЧИСТОТЕ?</h2>
             <p className="text-gray-400 text-lg mb-10 max-w-lg mx-auto">
               Напишите нам в MAX — ответим быстро, рассчитаем стоимость и назначим удобное время
@@ -401,13 +401,13 @@ export default function Index() {
             <label className="inline-flex items-start gap-3 cursor-pointer mb-6 text-left max-w-md mx-auto">
               <div
                 onClick={() => setPdConsent(!pdConsent)}
-                className={`mt-0.5 w-5 h-5 rounded flex-shrink-0 border-2 flex items-center justify-center transition-colors cursor-pointer ${pdConsent ? "gradient-brand border-transparent" : "border-gray-500 bg-transparent"}`}
+                className={`mt-0.5 w-5 h-5 rounded flex-shrink-0 border-2 flex items-center justify-center transition-colors cursor-pointer ${pdConsent ? "gradient-brand border-transparent" : "border-gray-600 bg-transparent"}`}
               >
                 {pdConsent && <Icon name="Check" size={12} className="text-white" />}
               </div>
               <span className="text-gray-400 text-sm leading-snug">
                 Я согласен(а) с{" "}
-                <a href="#" className="text-cyan-400 hover:underline">обработкой персональных данных</a>{" "}
+                <a href="#" className="text-emerald-400 hover:underline">обработкой персональных данных</a>{" "}
                 в соответствии с Федеральным законом №152-ФЗ
               </span>
             </label>
@@ -418,7 +418,7 @@ export default function Index() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={!pdConsent ? (e) => { e.preventDefault(); setPdConsent(false); } : undefined}
-                className={`btn-glow text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-lg transition-all flex items-center justify-center gap-3 ${pdConsent ? "gradient-brand hover:shadow-cyan-500/40 hover:shadow-xl hover:-translate-y-1" : "bg-gray-600 cursor-not-allowed opacity-60"}`}
+                className={`btn-glow text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-lg transition-all flex items-center justify-center gap-3 ${pdConsent ? "gradient-brand hover:shadow-emerald-500/40 hover:shadow-xl hover:-translate-y-1" : "bg-gray-700 cursor-not-allowed opacity-60"}`}
                 title={!pdConsent ? "Подтвердите согласие с обработкой персональных данных" : ""}
               >
                 <Icon name="MessageCircle" size={22} />
@@ -426,7 +426,7 @@ export default function Index() {
               </a>
               <a
                 href="tel:+78612000000"
-                className="flex items-center justify-center gap-3 border-2 border-cyan-400/40 text-cyan-300 font-bold text-lg px-10 py-5 rounded-2xl hover:bg-cyan-500/10 transition-all"
+                className="flex items-center justify-center gap-3 border-2 border-emerald-400/40 text-emerald-300 font-bold text-lg px-10 py-5 rounded-2xl hover:bg-emerald-500/10 transition-all"
               >
                 <Icon name="Phone" size={20} />
                 Позвонить
@@ -436,15 +436,15 @@ export default function Index() {
               <p className="text-amber-400/70 text-xs mt-3">Поставьте галочку выше, чтобы написать нам</p>
             )}
             <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500">
-              <span className="flex items-center gap-1.5"><Icon name="Mail" size={14} className="text-cyan-500" /> arenda-chistoty.ru@yandex.ru</span>
-              <span className="flex items-center gap-1.5"><Icon name="Clock" size={14} className="text-cyan-500" /> Пн–Вс: 8:00–20:00</span>
+              <span className="flex items-center gap-1.5"><Icon name="Mail" size={14} className="text-emerald-500" /> arenda-chistoty.ru@yandex.ru</span>
+              <span className="flex items-center gap-1.5"><Icon name="Clock" size={14} className="text-emerald-500" /> Пн–Вс: 8:00–20:00</span>
             </div>
           </Section>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[#080f19] text-gray-400 py-10">
+      <footer className="bg-[#061409] text-gray-400 py-10">
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-lg gradient-brand flex items-center justify-center">
@@ -454,10 +454,10 @@ export default function Index() {
           </div>
           <div className="flex flex-col items-center gap-1 text-sm">
             <span>Краснодар, выезд по всему городу</span>
-            <a href="tel:+78612000000" className="text-cyan-400 font-semibold hover:text-cyan-300 transition-colors">
+            <a href="tel:+78612000000" className="text-emerald-400 font-semibold hover:text-emerald-300 transition-colors">
               +7 (861) 200-00-00
             </a>
-            <a href="mailto:arenda-chistoty.ru@yandex.ru" className="text-cyan-400/70 hover:text-cyan-300 transition-colors text-xs">
+            <a href="mailto:arenda-chistoty.ru@yandex.ru" className="text-emerald-400/70 hover:text-emerald-300 transition-colors text-xs">
               arenda-chistoty.ru@yandex.ru
             </a>
           </div>
@@ -467,7 +467,7 @@ export default function Index() {
               href={MAX_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-cyan-400 hover:text-cyan-300 transition-colors font-semibold"
+              className="flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 transition-colors font-semibold"
             >
               <Icon name="MessageCircle" size={13} /> Написать в MAX
             </a>
@@ -481,7 +481,7 @@ export default function Index() {
         href={MAX_LINK}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 gradient-brand rounded-full shadow-lg shadow-cyan-500/30 flex items-center justify-center hover:scale-110 transition-transform animate-pulse-glow"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 gradient-brand rounded-full shadow-lg shadow-emerald-500/30 flex items-center justify-center hover:scale-110 transition-transform animate-pulse-glow"
         title="Написать в MAX"
       >
         <Icon name="MessageCircle" size={22} className="text-white" />
@@ -490,16 +490,16 @@ export default function Index() {
       {/* Cookie Banner */}
       {!cookieAccepted && (
         <div className="fixed bottom-0 left-0 right-0 z-40 p-4 md:p-0 md:bottom-6 md:left-6 md:right-auto md:max-w-sm">
-          <div className="bg-[#0d1b2a] border border-cyan-500/20 rounded-2xl p-5 shadow-2xl shadow-black/40 backdrop-blur-md">
+          <div className="bg-[#0a1f0f] border border-emerald-500/20 rounded-2xl p-5 shadow-2xl shadow-black/40 backdrop-blur-md">
             <div className="flex items-start gap-3 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <Icon name="Cookie" size={16} className="text-cyan-400" />
+              <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Icon name="Cookie" size={16} className="text-emerald-400" />
               </div>
               <div>
                 <p className="text-white text-sm font-semibold mb-1">Мы используем cookie</p>
                 <p className="text-gray-400 text-xs leading-relaxed">
                   Сайт использует cookie-файлы для улучшения работы и анализа посещаемости. Продолжая использование сайта, вы соглашаетесь с{" "}
-                  <a href="#" className="text-cyan-400 hover:underline">политикой конфиденциальности</a>.
+                  <a href="#" className="text-emerald-400 hover:underline">политикой конфиденциальности</a>.
                 </p>
               </div>
             </div>
